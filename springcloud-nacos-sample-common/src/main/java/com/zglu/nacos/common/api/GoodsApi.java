@@ -1,5 +1,7 @@
 package com.zglu.nacos.common.api;
 
+import org.springframework.web.bind.annotation.GetMapping;
+
 /**
  * @author zglu
  */
@@ -9,6 +11,7 @@ public interface GoodsApi {
      *
      * @return String
      */
+    @GetMapping("/goods")
     String goods();
 
     /**
@@ -16,5 +19,6 @@ public interface GoodsApi {
      *
      * @return String
      */
+    @GetMapping("/goodsAndUser")
     String goodsAndUser();
 }

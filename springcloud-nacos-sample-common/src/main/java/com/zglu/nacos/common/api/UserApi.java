@@ -1,5 +1,7 @@
 package com.zglu.nacos.common.api;
 
+import org.springframework.web.bind.annotation.GetMapping;
+
 /**
  * @author zglu
  */
@@ -9,6 +11,7 @@ public interface UserApi {
      *
      * @return String
      */
+    @GetMapping("/user")
     String user();
 
     /**
@@ -16,6 +19,7 @@ public interface UserApi {
      *
      * @return String
      */
+    @GetMapping("/defaultUser")
     default String defaultUser() {
         return "default user";
     }

@@ -14,11 +14,6 @@
 
     <dependencies>
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
-
-        <dependency>
             <groupId>com.zglu</groupId>
             <artifactId>springcloud-nacos-sample-common</artifactId>
             <version>1.0-SNAPSHOT</version>
@@ -47,7 +42,7 @@
                     </execution>
                 </executions>
                 <configuration>
-                    <mainClass>com.zglu.nacos.app.AppApplication</mainClass>
+                    <mainClass>com.zglu.nacos.AppApplication</mainClass>
                 </configuration>
             </plugin>
         </plugins>

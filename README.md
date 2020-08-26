@@ -26,7 +26,7 @@
         docker run --name nacos -d -p 8848:8848 --env MODE=standalone nacos/nacos-server:1.3.2
 
 * 依次启动服务
-* 访问http://localhost:8080
+* 访问http://localhost:8092
 
 <a id="3"></a>
 ## 3. 相关项目
