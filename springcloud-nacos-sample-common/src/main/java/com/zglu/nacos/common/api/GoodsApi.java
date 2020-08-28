@@ -30,4 +30,12 @@ public interface GoodsApi {
      */
     @PostMapping("/goodsAndUserAdd")
     int goodsAndUserAdd();
+
+    /**
+     * testSentinel
+     *
+     * @return String
+     */
+    @GetMapping("/testSentinel")
+    String testSentinel();
 }

@@ -1,5 +1,6 @@
 package com.zglu.nacos.goods.controller;
 
+import com.alibaba.csp.sentinel.annotation.SentinelResource;
 import com.zglu.nacos.common.api.GoodsApi;
 import com.zglu.nacos.common.feign.UserFeign;
 import io.seata.spring.annotation.GlobalTransactional;
@@ -39,4 +40,15 @@ public class GoodsController implements GoodsApi {
         userFeign.userAdd();
         return 1 / 0;
     }
+
+    @Override
+    @SentinelResource(value = "testSentinel", fallback = "testSentinelFallback")
+    public String testSentinel() {
+        return "testSentinel";
+    }
+
+    public String testSentinelFallback(){
+        return "testSentinelFallback";
+    }
+
 }
