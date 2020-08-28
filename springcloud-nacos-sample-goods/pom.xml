@@ -32,6 +32,12 @@
             <version>${dynamic-datasource.version}</version>
         </dependency>
 
+        <!-- jdbc -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+        </dependency>
+
         <!-- nacos -->
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
