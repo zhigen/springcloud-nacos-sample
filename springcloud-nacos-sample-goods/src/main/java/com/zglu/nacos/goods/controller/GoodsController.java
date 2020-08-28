@@ -3,13 +3,18 @@ package com.zglu.nacos.goods.controller;
 import com.zglu.nacos.common.api.GoodsApi;
 import com.zglu.nacos.common.feign.UserFeign;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.Date;
 
 /**
  * @author zglu
  */
 @RestController
 public class GoodsController implements GoodsApi {
+    @Autowired
+    private JdbcTemplate jdbcTemplate;
     @Autowired
     private UserFeign userFeign;
 
@@ -21,5 +26,12 @@ public class GoodsController implements GoodsApi {
     @Override
     public String goodsAndUser() {
         return "goods" + userFeign.user();
+    }
+
+    @Override
+    public int goodsAndUserAdd() {
+        String sql = "insert into zglu1.goods (name, created_date, created_by, last_modified_date, last_modified_by, deleted) values (?, ?, ?, ?, ?, ?)";
+        jdbcTemplate.update(sql, "seata", new Date(), 0, new Date(), 0, 0);
+        return userFeign.userAdd();
     }
 }

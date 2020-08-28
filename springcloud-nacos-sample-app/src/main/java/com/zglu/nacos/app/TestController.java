@@ -19,10 +19,12 @@ public class TestController {
     private UserFeign userFeign;
 
     @GetMapping
-    public void test(){
+    public void test() {
         log.info(goodsFeign.goods());
         log.info(goodsFeign.goodsAndUser());
         log.info(userFeign.user());
         log.info(userFeign.defaultUser());
+        log.info(userFeign.userAdd());
+        log.info(goodsFeign.goodsAndUserAdd());
     }
 }
