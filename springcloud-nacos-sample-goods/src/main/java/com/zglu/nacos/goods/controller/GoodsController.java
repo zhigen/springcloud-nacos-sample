@@ -4,6 +4,7 @@ import com.alibaba.csp.sentinel.annotation.SentinelResource;
 import com.zglu.nacos.common.api.GoodsApi;
 import com.zglu.nacos.common.feign.UserFeign;
 import io.seata.spring.annotation.GlobalTransactional;
+import lombok.SneakyThrows;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.transaction.annotation.Transactional;
@@ -41,9 +42,11 @@ public class GoodsController implements GoodsApi {
         return 1 / 0;
     }
 
+    @SneakyThrows
     @Override
     @SentinelResource(value = "testSentinel", fallback = "testSentinelFallback")
     public String testSentinel() {
+        Thread.sleep(2000);
         return "testSentinel";
     }
 

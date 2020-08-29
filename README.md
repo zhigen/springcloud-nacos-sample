@@ -21,14 +21,17 @@
 
 <a id="2"></a>
 ## 2. 使用
-* 启动nacos、mysql、seata
+* 启动nacos、mysql、seata、sentinel控制台
 
         $ docker run --name nacos -d -p 8848:8848 --env MODE=standalone nacos/nacos-server:1.3.2
         $ docker run --name mysql -d -p 3306:3306 -v /e/data/docker/mysql:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=123456 mysql:8
         $ docker run --name seata -p 8091:8091 -e SEATA_CONFIG_NAME=file:/root/seata-config/registry -v /e/data/docker/seata/conf:/root/seata-config seataio/seata-server:1.3.0
+        $ java -Dserver.port=9003 -jar sentinel-dashboard-1.8.0.jar
 
 * 依次启动服务
 * 访问http://localhost:9002
+* 访问http://localhost:9001/testSentinel
+* 访问http://localhost:9003
 
 <a id="3"></a>
 ## 3. 相关项目
